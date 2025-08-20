@@ -1,17 +1,17 @@
-import multiprocessing  # 用于多进程处理
-import threading  # 用于多线程处理
-import time  # 用于时间控制
-import numpy as np  # 用于数值计算
-import librosa  # 用于音频处理
-import soundcard as sc  # 用于捕获系统音频
-from scipy.signal import correlate, butter, filtfilt  # 用于信号处理和滤波
-from sklearn.preprocessing import scale  # 用于数据标准化
-import warnings  # 用于忽略警告
-from soundcard.mediafoundation import SoundcardRuntimeWarning  # 用于处理soundcard警告
-import os  # 用于文件和目录操作
-import queue  # 用于线程安全的队列
+import multiprocessing
+import threading
+import time
+import numpy as np
+import librosa
+import soundcard as sc  
+from scipy.signal import correlate, butter, filtfilt  
+from sklearn.preprocessing import scale  
+import warnings  
+from soundcard.mediafoundation import SoundcardRuntimeWarning 
+import os  
+import queue  
 
-# 忽略soundcard的运行时警告
+
 warnings.filterwarnings('ignore', category=SoundcardRuntimeWarning)
 
 # 配置参数
@@ -91,7 +91,7 @@ class GameAudioListener:
 
 class DodgingTrigger(GameAudioListener):
     """
-    闪避触发器类，在后台持续监听并通过队列返回是否需要按空格键
+    触发类，在后台持续监听并通过队列返回是否
     """
     def __init__(self, samples_dir: str, threshold=0.1, ratio=1.0, is_allowed_succe_dodge=False):
         """
@@ -164,7 +164,6 @@ class DodgingTrigger(GameAudioListener):
         except queue.Empty:
             return False  # 如果队列为空，返回 False
 
-# 示例调用方式（仅用于测试，实际使用时可删除）
 if __name__ == "__main__":
     multiprocessing.freeze_support()
     dt = DodgingTrigger(SAMPLES_DIR, threshold=THRESHOLD, ratio=EXPANSION_RATIO,
@@ -173,7 +172,8 @@ if __name__ == "__main__":
     try:
         while True:
             need_space = dt.get_result()
-            print(f"是否需要按空格键: {need_space}")
+            print(f"是否需要按空格键，代碼一開始是寫的空格但實際實現不一定要是就是了: {need_space}")
             time.sleep(0.1)  # 控制查询频率
     except KeyboardInterrupt:
+
         dt.stop_listening()  # 停止监听
