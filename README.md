@@ -5,6 +5,7 @@
 需使用kmbox或dhzbox硬件操控，或替換為你自己的數標模擬方式  
 我並沒有kmbox net，因此val_ai_obs_kmnet是否正常運行我無法保證  
 同時我基於[mouse_control](https://github.com/suixin1424/mouse_control)訓練了一份神經網絡模型，在net_mouse_control_example可以看到使用方法，如果有需要可以將其加入至代碼實現中  
+本項目自帶一個AI模型，放置於libraries  
 # 使用方法
 將主機與副機連至同一局域網內  
 dll文件夾內為kmbox的庫和可能缺失的dll，請將其移動至你的虛擬環境內  
