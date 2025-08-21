@@ -23,7 +23,7 @@ class Dodging:
                 if need_dodge:
                     print("聲音匹配")
             except Exception as e:
-                print(f"闪避循环中发生错误: {e}")
+                print(f"发生错误: {e}")
             time.sleep(0.01)
 
     def stop(self):
@@ -46,4 +46,5 @@ def main():
 
 if __name__ == "__main__":
     dodger = Dodging()
+
     main()
