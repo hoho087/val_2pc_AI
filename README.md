@@ -1,11 +1,13 @@
 # val_2pc_AI
-基於yolo和udp通訊的自動識別
+基於yolo識別遊戲自動化操作
 # 簡介
 為了解決性能影響與檢測的一個項目，使用obs自帶的功能通訊  
 需使用kmbox或dhzbox硬件操控，或替換為你自己的數標模擬方式  
 我並沒有kmbox net，因此val_ai_obs_kmnet是否正常運行我無法保證  
 同時我基於[mouse_control](https://github.com/suixin1424/mouse_control)訓練了一份神經網絡模型，在net_mouse_control_example可以看到使用方法，如果有需要可以將其加入至代碼實現中  
 本項目自帶一個AI模型，放置於libraries  
+libraries裡的audio_trigger使用最大歸一化交叉相關匹配特徵音頻波形，原本是嘗試用來自動閃避(閃光)的，但抗干擾性似乎不夠，就把功能剃除了。  
+但是保留了audio_trigger_example的文件，你可以在裡面看到使用方法，如果有需要可以將功能放到需要的地方  
 # 使用方法
 將主機與副機連至同一局域網內  
 dll文件夾內為kmbox的庫和可能缺失的dll，請將其移動至你的虛擬環境內  
