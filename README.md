@@ -1,7 +1,7 @@
 # val_2pc_AI
 基於yolo使用udp通訊圖像識別遊戲自動化操作
 # 簡介
-為了解決性能影響與檢測的一個項目，使用obs自帶的功能通訊  
+為了解決性能影響與檢測的一個項目，使用obs自帶的功能  
 需使用kmbox或dhzbox硬件操控，或替換為你自己的數標模擬方式  
 我並沒有kmbox net，因此val_ai_obs_kmnet是否正常運行我無法保證  
 同時我基於[mouse_control](https://github.com/suixin1424/mouse_control)訓練了一份神經網絡模型，在net_mouse_control_example可以看到使用方法，如果有需要可以將其加入至代碼實現中  
